@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .main {
+            margin: 10% auto;
+            width: 400px;
+            text-align: center;
+        }
+        .card {
+            text-align: left;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px 10px;
+            box-shadow: 
+            3px 3px 3px 0px rgb(0,0,0,0.1),
+            3px 3px 8px 2px rgb(0,0,0,0.2),
+            3px 3px 20px 5px rgb(0,0,0,0.1)
+            ;
+        }
+        span {
+            vertical-align: top;
+        }
+        .view {
+            width: 100px;
+            margin: auto;
+            margin-top: 20px;
+        }
+        .view input {
+            font-size: 28px;
+        }
+    </style>
+    <title>vCard</title>
+</head>
+
+<body>
+    <div class="main">
+        <h1>vCard 公會名片產生器</h1>
+        <form action="api.php" method="post" enctype="multipart/form-data">
+            <div class="card">
+                <p>勇者大名 ｜ <input type="text" name="adventurer" value="穗稻忠武"</p>
+                <p>所屬公會 ｜ <input type="text" name="guild" value="嗜睡者聯盟"</p>
+                <p>
+                    <span>技能簡介 ｜ </span>
+                    <textarea name="skill" id="" cols="35" rows="7">睡到中午：假日時高機率發動。</textarea>
+                </p>
+                <hr>
+                <p>上傳頭像 ｜ <input type="file" name="photo"></p>
+                <p>
+                    背景主題 ｜ 
+                    <select name="layout">
+                        <option value="light" selected>Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="green">Green</option>
+                    </select>
+                </p>
+            </div>
+            <div class="view">
+                <input type="submit" value="送出預覽">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
